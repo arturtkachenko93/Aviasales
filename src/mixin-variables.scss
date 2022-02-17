@@ -1,0 +1,48 @@
+/* Fonts */
+
+@font-face {
+  font-family: 'Inter-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Inter-Regular.woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Inter-Regular';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/Inter-Regular.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Variables */
+
+// colors
+$background-wrapper: #e5e5e5;
+$background: #ffffff;
+$background-category: #fafafa;
+$font-color: #000000;
+$font-color-light: #827e7e;
+$focus: deepskyblue;
+$rate-red: #E90000;
+$rate-orange: #E97E00;
+$rate-yellow: #E9D100;
+$rate-green: #66E900;
+
+// breakpoints
+$min-mobile-width: 320px;
+$max-mobile-width: 767px;
+$min-tablet-width: 768px;
+$min-tablet-width: 768px;
+$min-desktop-width: 1440px;
+
+/* Сброс отступов */
+$efreytorskij_zazor: 0.001px;
+
+@mixin reset {
+  padding: 0;
+  margin: $efreytorskij_zazor;
+}
+
+$font-family: Inter-Regular, Arial, sans-serif;
