@@ -1,0 +1,83 @@
+@import '../../mixin-variables.scss';
+
+.form {
+  background-color: $backgroud-white;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 20px;
+}
+
+.wrapper {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+}
+
+.form-list {
+  @include reset;
+  display: flex;
+  flex-wrap: wrap;
+  font-family: $font-secondary;
+  line-height: calc(20 / 13 * 100%);
+
+  & li {
+    display: flex;
+    flex-grow: 1;
+    width: 150px;
+    margin-right: auto;
+    padding: 10px 0;
+
+    &:hover {
+      background-color: $form-hover;
+      cursor: pointer;
+    }
+  }
+
+  & li:nth-child(2n) {
+    flex-grow: 0;
+  }
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.checkbox {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $font-color-secondary;
+  border-radius: 2px;
+  margin-left: -30px;
+}
+
+input:checked + .checkbox {
+  border: 1px solid $price-color;
+}
+
+input:checked + .checkbox::before {
+  position: absolute;
+  content: '';
+  width: 6px;
+  height: 15px;
+  top: 0;
+  left: 6px;
+  background-color: transparent;
+  border-right: 2px solid $price-color;
+  border-bottom: 2px solid $price-color;
+  transform: rotate(45deg);
+}
+
+input:focus + .checkbox {
+  outline: 2px solid $focus;
+}

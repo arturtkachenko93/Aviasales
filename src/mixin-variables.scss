@@ -1,41 +1,37 @@
 /* Fonts */
 
 @font-face {
-  font-family: 'Inter-Regular';
+  font-family: 'OpenSans-Regular';
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/Inter-Regular.woff');
+  src: url('../public/fonts/OpenSans-Regular.woff2') format('woff2');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Inter-Regular';
+  font-family: 'OpenSans-SemiBold';
   font-style: normal;
   font-weight: 400;
-  src: url('./fonts/Inter-Regular.woff2') format('woff2');
+  src: url('../public/fonts/OpenSans-SemiBold.woff2') format('woff2');
   font-display: swap;
 }
 
 /* Variables */
 
 // colors
-$background-wrapper: #e5e5e5;
-$background: #ffffff;
+$background: #e5e5e5;
+$backgroud-white: #ffffff;
 $background-category: #fafafa;
-$font-color: #000000;
-$font-color-light: #827e7e;
+$font-color-main: #4a4a4a;
+$font-color-secondary: #a0b0b9;
 $focus: deepskyblue;
-$rate-red: #E90000;
-$rate-orange: #E97E00;
-$rate-yellow: #E9D100;
-$rate-green: #66E900;
+$price-color: #2196f3;
+$checkbox-border: #9abbce;
+$form-hover: #f1fcff;
 
 // breakpoints
-$min-mobile-width: 320px;
 $max-mobile-width: 767px;
-$min-tablet-width: 768px;
-$min-tablet-width: 768px;
-$min-desktop-width: 1440px;
+$tablet-width: 768px;
 
 /* Сброс отступов */
 $efreytorskij_zazor: 0.001px;
@@ -45,4 +41,18 @@ $efreytorskij_zazor: 0.001px;
   margin: $efreytorskij_zazor;
 }
 
-$font-family: Inter-Regular, Arial, sans-serif;
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+$font-family: OpenSans-SemiBold, Arial, sans-serif;
+$font-secondary: OpenSans-Regular, Arial, sans-serif;
