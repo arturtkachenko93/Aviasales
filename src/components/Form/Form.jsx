@@ -1,7 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { getAllFilter } from '../../store/filterReducer';
 import classes from './Form.module.scss';
 
 const Form = () => {
+  const dispatch = useDispatch();
   return (
     <form className={classes.form}>
       <fieldset className={classes.wrapper}>
@@ -9,7 +12,7 @@ const Form = () => {
         <ul className={classes['form-list']}>
           <li>
             <label className={classes.label}>
-              <input className="visually-hidden" type="checkbox" />
+              <input onChange={() => dispatch(getAllFilter())} className="visually-hidden" type="checkbox" />
               <span className={classes.checkbox} />
               Все
             </label>

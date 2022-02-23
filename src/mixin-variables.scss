@@ -1,7 +1,7 @@
 /* Fonts */
 
 @font-face {
-  font-family: 'OpenSans-Regular';
+  font-family: 'OpenSans';
   font-style: normal;
   font-weight: 400;
   src: url('../public/fonts/OpenSans-Regular.woff2') format('woff2');
@@ -9,9 +9,9 @@
 }
 
 @font-face {
-  font-family: 'OpenSans-SemiBold';
+  font-family: 'OpenSans';
   font-style: normal;
-  font-weight: 400;
+  font-weight: 600;
   src: url('../public/fonts/OpenSans-SemiBold.woff2') format('woff2');
   font-display: swap;
 }
@@ -19,15 +19,17 @@
 /* Variables */
 
 // colors
-$background: #e5e5e5;
+$background: #f3f7fa;
 $backgroud-white: #ffffff;
 $background-category: #fafafa;
 $font-color-main: #4a4a4a;
 $font-color-secondary: #a0b0b9;
 $focus: deepskyblue;
 $price-color: #2196f3;
+$ticket-title-color: #a0b0b9;
 $checkbox-border: #9abbce;
 $form-hover: #f1fcff;
+$filter-border: #dfe5ec;
 
 // breakpoints
 $max-mobile-width: 767px;
@@ -54,5 +56,4 @@ $efreytorskij_zazor: 0.001px;
   overflow: hidden;
 }
 
-$font-family: OpenSans-SemiBold, Arial, sans-serif;
-$font-secondary: OpenSans-Regular, Arial, sans-serif;
+$font-family: OpenSans, Arial, sans-serif;

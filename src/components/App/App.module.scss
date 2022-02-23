@@ -11,10 +11,40 @@
   }
 }
 
-.wrap {
+.main {
   @media (min-width: $tablet-width) {
     display: grid;
     grid-template-columns: 232px 1fr;
     column-gap: 20px;
+  }
+}
+
+.btn-more {
+  display: inline-flex;
+  width: 100%;
+  min-height: 50px;
+  font-family: $font-family;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: $backgroud-white;
+  background-color: $price-color;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 5px;
+  transition: 0.6s;
+
+  &:hover {
+    color: $font-color-secondary;
+    background-color: rgba($focus, $alpha: 0.3);
+  }
+
+  &:active {
+    color: $backgroud-white;
+    background-color: rgba($price-color, $alpha: 0.5);
   }
 }

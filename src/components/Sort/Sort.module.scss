@@ -1,0 +1,57 @@
+@import '../../mixin-variables.scss';
+
+.list-btn {
+  @include reset;
+  display: flex;
+  flex-wrap: wrap;
+
+  & li {
+    flex: 1 1 33%;
+  }
+}
+
+.button {
+  display: inline-flex;
+  width: 100%;
+  min-height: 50px;
+  font-family: $font-family;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background-color: $backgroud-white;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-bottom: 20px;
+  transition: 0.6s;
+
+  &:hover {
+    color: $backgroud-white;
+    background-color: rgba($focus, $alpha: 0.3);
+  }
+
+  &.low {
+    border: 1px solid $filter-border;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  &.fast {
+    border-top: 1px solid $filter-border;
+    border-bottom: 1px solid $filter-border;
+  }
+
+  &.opt {
+    border: 1px solid $filter-border;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  &.current {
+    color: $backgroud-white;
+    background-color: $price-color;
+  }
+}

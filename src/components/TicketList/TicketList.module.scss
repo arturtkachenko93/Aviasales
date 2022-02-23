@@ -1,0 +1,6 @@
+@import '../../mixin-variables.scss';
+
+.ticket-list {
+  @include reset;
+  margin-bottom: 20px;
+}

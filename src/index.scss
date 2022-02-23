@@ -29,6 +29,7 @@ body {
   font-weight: 400;
   color: $font-color-main;
   line-height: calc(22 / 12 * 100%);
+  letter-spacing: 0.5px;
   background-color: $background;
   overflow-x: hidden;
   @include reset;
