@@ -1,4 +1,10 @@
-import { createStore } from 'redux';
-import { filterReducer } from './filterReducer';
+import { createStore, combineReducers } from "redux";
+import { filterReducer } from "./filterReducer";
+import { sortReducer } from "./sortReducer";
 
-export const store = createStore(filterReducer);
+const rootReducers = combineReducers({
+  filters: filterReducer,
+  sort: sortReducer,
+});
+
+export const store = createStore(rootReducers);

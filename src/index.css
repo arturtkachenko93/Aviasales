@@ -1,0 +1,85 @@
+@charset "UTF-8";
+/* Fonts */
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/fonts/OpenSans-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../public/fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* Variables */
+/* Сброс отступов */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-width: 420px;
+  min-height: 100%;
+  scroll-behavior: smooth;
+  font-size: 12px;
+  font-family: OpenSans, Arial, sans-serif;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: calc(22 / 12 * 100%);
+  letter-spacing: 0.5px;
+  background-color: #f3f7fa;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0.001px;
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  min-height: 100vh;
+  -ms-grid-rows: min-content 1fr min-content;
+      grid-template-rows: -webkit-min-content 1fr -webkit-min-content;
+      grid-template-rows: min-content 1fr min-content;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 25px;
+}
+/*# sourceMappingURL=index.css.map */

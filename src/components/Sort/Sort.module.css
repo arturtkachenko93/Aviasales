@@ -1,0 +1,103 @@
+@charset "UTF-8";
+/* Fonts */
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/fonts/OpenSans-Regular.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'OpenSans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("../public/fonts/OpenSans-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+/* Variables */
+/* Сброс отступов */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(100%);
+          clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.list-btn {
+  padding: 0;
+  margin: 0.001px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.list-btn li {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 33%;
+          flex: 1 1 33%;
+}
+
+.button {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  min-height: 50px;
+  font-family: OpenSans, Arial, sans-serif;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  background-color: #ffffff;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  padding: 5px;
+  margin-bottom: 20px;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+}
+
+.button:hover {
+  color: #ffffff;
+  background-color: rgba(0, 191, 255, 0.3);
+}
+
+.button.low {
+  border: 1px solid #dfe5ec;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.button.fast {
+  border-top: 1px solid #dfe5ec;
+  border-bottom: 1px solid #dfe5ec;
+}
+
+.button.opt {
+  border: 1px solid #dfe5ec;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.button.current {
+  color: #ffffff;
+  background-color: #2196f3;
+}
+/*# sourceMappingURL=Sort.module.css.map */
