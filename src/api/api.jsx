@@ -1,41 +1,24 @@
-// export default class MovieAPI {
-//   apiBase = 'https://api.themoviedb.org/3/search/movie?api_key=2da6721201e4c6d53fa211ee0b0b40ff';
+import { getAddSearchId, getAddTickets } from "../store/ticketsReducer";
 
-//   apiGenre = 'https://api.themoviedb.org/3/genre/movie/list?api_key=2da6721201e4c6d53fa211ee0b0b40ff';
+export const baseUrl = "https://front-test.beta.aviasales.ru";
 
-//   async getResource(url) {
-//     const response = await fetch(`${this.apiBase}${url}`);
+export const getSearchId = () => async (dispatch) => {
+  const resolve = await fetch("https://front-test.beta.aviasales.ru/search");
+  const json = await resolve.json();
+  dispatch(getAddSearchId(json));
+};
 
-//     if (!response.ok) {
-//       throw new Error(`Could not fetch ${url}, received ${response.status}`);
-//     }
-//     const result = await response.json();
-//     return result;
-//   }
+export const getTickets = (id) => async (dispatch) => {
+  const resolve = await fetch(`https://front-test.beta.aviasales.ru/tickets?searchId=${id}`);
+  if (!resolve.ok) {
+    dispatch(getTickets(id));
+    throw new Error(`Ошибка, код ${resolve.status}`);
+  }
 
-//   // async getAllMovies() {
-//   //   const result = await this.getResource(`&query=return`);
+  const json = await resolve.json();
 
-//   //   return result;
-//   // }
-
-//   async searchMovies(page, str) {
-//     const result = await this.getResource(`&page=${page}&query=${str}`);
-//     return result;
-//   }
-
-//   async getResource2() {
-//     const response = await fetch(`${this.apiGenre}`);
-
-//     if (!response.ok) {
-//       throw new Error(`Could not fetch ${this.apiGenre}, received ${response.status}`);
-//     }
-//     const result = await response.json();
-//     return result;
-//   }
-
-//   async getGenres() {
-//     const result = await this.getResource2();
-//     return result.genres;
-//   }
-// }
+  dispatch(getAddTickets(json));
+  if (!json.stop) {
+    dispatch(getTickets(id));
+  }
+};

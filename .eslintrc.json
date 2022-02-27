@@ -5,7 +5,8 @@
   "parserOptions": {
     "requireConfigFile": false,
     "babelOptions": {
-      "presets": ["@babel/preset-react"]
+      "presets": ["@babel/preset-react", "@babel/preset-env"],
+      "plugins": ["@emotion"]
     }
   },
   "env": {
@@ -41,7 +42,9 @@
     "react/function-component-definition": ["off"],
     "arrow-body-style": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
-    "no-prototype-builtins": "off"
+    "no-prototype-builtins": "off",
+    "react/prop-types": "off",
+    "react-hooks/exhaustive-deps": "off"
   },
   "settings": {
     "react": {
