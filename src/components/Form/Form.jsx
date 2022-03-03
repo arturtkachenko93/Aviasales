@@ -31,7 +31,7 @@ const Form = () => {
                 className="visually-hidden withoutTransfers"
                 type="checkbox"
                 checked={withoutTransfers && true}
-                onChange={(e) => dispatch(getOtherFilters(e.target.className.split(" ")[1]))}
+                onChange={(event) => dispatch(getOtherFilters(event.target.className.split(" ")[1]))}
               />
               <span className={classes.checkbox} />
               Без пересадок
@@ -43,7 +43,7 @@ const Form = () => {
                 className="visually-hidden oneTransfer"
                 type="checkbox"
                 checked={oneTransfer && true}
-                onChange={(e) => dispatch(getOtherFilters(e.target.className.split(" ")[1]))}
+                onChange={(event) => dispatch(getOtherFilters(event.target.className.split(" ")[1]))}
               />
               <span className={classes.checkbox} />1 пересадка
             </label>
@@ -54,7 +54,7 @@ const Form = () => {
                 className="visually-hidden twoTransfers"
                 type="checkbox"
                 checked={twoTransfers && true}
-                onChange={(e) => dispatch(getOtherFilters(e.target.className.split(" ")[1]))}
+                onChange={(event) => dispatch(getOtherFilters(event.target.className.split(" ")[1]))}
               />
               <span className={classes.checkbox} />2 пересадки
             </label>
@@ -65,7 +65,7 @@ const Form = () => {
                 className="visually-hidden threeTransfers"
                 type="checkbox"
                 checked={threeTransfers && true}
-                onChange={(e) => dispatch(getOtherFilters(e.target.className.split(" ")[1]))}
+                onChange={(event) => dispatch(getOtherFilters(event.target.className.split(" ")[1]))}
               />
               <span className={classes.checkbox} />3 пересадки
             </label>

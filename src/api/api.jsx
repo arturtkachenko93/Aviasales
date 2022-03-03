@@ -11,7 +11,6 @@ export const getSearchId = () => async (dispatch) => {
 
 export const getTickets = (id) => async (dispatch) => {
   const resolve = await fetch(`https://aviasales-test-api.java-mentor.com/tickets?searchId=${id}`);
-  console.log(id)
   if (!resolve.ok) {
     dispatch(getTickets(id));
     throw new Error(`Ошибка, код ${resolve.status}`);
