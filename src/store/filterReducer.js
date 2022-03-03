@@ -2,77 +2,39 @@
 
 const defaultState = {
   filters: [
-    {
-      all: false,
-      withoutTransfers: false,
-      oneTransfer: false,
-      twoTransfers: false,
-      threeTransfers: false,
-    },
+    { label: "Все", name: "all", checked: true },
+    { label: "Без пересадок", name: "no", checked: true, value: 0 },
+    { label: "1 пересадка", name: "one", checked: true, value: 1 },
+    { label: "2 пересадки", name: "two", checked: true, value: 2 },
+    { label: "3 пересадки", name: "three", checked: true, value: 3 },
   ],
 };
 
-const ALL_FILTER = "ALL_FILTER";
+const CHECKED = "CHECKED";
 const OTHER_FILTERS = "OTHER_FILTERS";
 
 export const filterReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case ALL_FILTER:
-      return {
+    case CHECKED: {
+      if (action.payload === "all") {
+        return {
+          ...state,
+          filters: state.filters.map((element) => ({ ...element, checked: !state.filters[0].checked })),
+        };
+      }
+      const newState = {
         ...state,
-        filters: [
-          ...state.filters.map((el) => {
-            for (const i in el) {
-              if (el.hasOwnProperty(i)) {
-                el[i] = !el[i];
-                el[i] = el.all;
-              }
-            }
-            return el;
-          }),
-        ],
+        filters: state.filters.map((element) =>
+          action.payload === element.name ? { ...element, checked: !element.checked } : element
+        ),
       };
-    case OTHER_FILTERS:
-      return {
-        ...state,
-        filters: [
-          ...state.filters.map((el) => {
-            for (const i in el) {
-              if (el.hasOwnProperty(i)) {
-                switch (action.payload) {
-                  case "withoutTransfers":
-                    el.withoutTransfers = !el.withoutTransfers;
-                    el.all = false;
-                    break;
-                  case "oneTransfer":
-                    el.oneTransfer = !el.oneTransfer;
-                    el.all = false;
-                    break;
-                  case "twoTransfers":
-                    el.twoTransfers = !el.twoTransfers;
-                    el.all = false;
-                    break;
-                  case "threeTransfers":
-                    el.threeTransfers = !el.threeTransfers;
-                    el.all = false;
-                    break;
-                  default:
-                    return el;
-                }
-                if (el.withoutTransfers && el.oneTransfer && el.twoTransfers && el.threeTransfers) {
-                  el.all = true;
-                }
-              }
-            }
-
-            return el;
-          }),
-        ],
-      };
+      newState.filters[0].checked = newState.filters.slice(1).every((element) => element.checked);
+      return newState;
+    }
     default:
       return state;
   }
 };
 
-export const getAllFilter = () => ({ type: ALL_FILTER });
+export const getChecked = (payload) => ({ type: CHECKED, payload });
 export const getOtherFilters = (payload) => ({ type: OTHER_FILTERS, payload });

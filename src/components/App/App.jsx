@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { css } from "@emotion/react";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { getSearchId, getTickets } from "../../api/api";
+import { getNextTickets } from "../../store/ticketsReducer";
 import { Form } from "../Form";
 import { Sort } from "../Sort";
 import { TicketList } from "../TicketList";
@@ -42,7 +43,7 @@ const App = () => {
           <Sort />
           <PacmanLoader color="turquoise" css={override} size={20} loading={!status.stop} />
           <TicketList />
-          <button className={classes["btn-more"]} type="button">
+          <button className={classes["btn-more"]} type="button" onClick={() => dispatch(getNextTickets())}>
             Показать ещё 5 билетов!
           </button>
         </div>

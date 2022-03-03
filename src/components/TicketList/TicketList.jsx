@@ -2,13 +2,21 @@ import { React } from "react";
 import { useSelector } from "react-redux";
 import { v4 as uuid } from "uuid";
 import { getSlice } from "../../utils/ticketsSlice";
+import { sortTickets } from "../../utils/sortTickets";
+import { filterTickets } from "../../utils/filterTickets";
 import { Ticket } from "../Ticket";
 import classes from "./TicketList.module.scss";
 
 const TicketList = () => {
-  const { tickets, page } = useSelector((state) => state.tickets);
+  const tickets = useSelector((state) => state.tickets);
+  const sort = useSelector((state) => state.sort);
+  const filters = useSelector((state) => state.filters);
 
-  const ticketItems = getSlice(tickets.data, page).map((item) => {
+  getSlice(tickets.tickets.data, tickets.page);
+  const ticketItems = sortTickets(
+    filterTickets(getSlice(tickets.tickets.data, tickets.page), filters.filters),
+    sort.activeFilter
+  ).map((item) => {
     return (
       <Ticket
         key={uuid()}
