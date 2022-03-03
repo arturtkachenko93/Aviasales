@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { css } from "@emotion/react";
 import PacmanLoader from "react-spinners/PacmanLoader";
-import { getSearchId, getTickets } from "../../api/api";
+import {getSearchId, getTickets} from "../../api/api";
 import { Form } from "../Form";
 import { Sort } from "../Sort";
 import { TicketList } from "../TicketList";
@@ -26,8 +26,9 @@ const App = () => {
   }, [dispatch, searchId]);
 
   const override = css`
+    position: relative;
+    bottom: 20px;
     display: block;
-    margin: 0 auto;
   `;
 
   return (
@@ -37,10 +38,9 @@ const App = () => {
       </header>
       <main className={classes.main}>
         <Form />
-
         <div className={classes.wrapper}>
           <Sort />
-          <PacmanLoader color="turquoise" css={override} size={20} loading={!status.stop} />
+          <PacmanLoader color="turquoise" css={override} size={16} loading={!status.stop} />
           <TicketList />
           <button className={classes["btn-more"]} type="button">
             Показать ещё 5 билетов!
