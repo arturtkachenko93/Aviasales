@@ -1,53 +1,29 @@
 /* eslint-disable default-param-last */
 
 const defaultState = {
-  sort: [{ low: false, optimal: false, fast: false }],
+  sortButtons: [
+    { name: "cheap", label: "САМЫЙ ДЕШЕВЫЙ" },
+    { name: "fast", label: "САМЫЙ БЫСТРЫЙ" },
+    { name: "optimal", label: "ОПТИМАЛЬНЫЙ" },
+  ],
+  activeFilter: "cheap",
 };
 
-const ADD_LOW = "ADD_LOW";
-const ADD_OPTIMAL = "ADD_OPTIMAL";
-const ADD_FAST = "ADD_FAST";
+const CHANGE_SORT = "CHANGE_SORT";
 
 export const sortReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case ADD_LOW:
+    case CHANGE_SORT:
       return {
-        sort: [
-          ...state.sort.map((el) => {
-            el.low = true;
-            el.fast = false;
-            el.optimal = false;
-            return el;
-          }),
-        ],
-      };
-    case ADD_OPTIMAL:
-      return {
-        sort: [
-          ...state.sort.map((el) => {
-            el.low = false;
-            el.fast = false;
-            el.optimal = true;
-            return el;
-          }),
-        ],
-      };
-    case ADD_FAST:
-      return {
-        sort: [
-          ...state.sort.map((el) => {
-            el.low = false;
-            el.fast = true;
-            el.optimal = false;
-            return el;
-          }),
-        ],
+        ...state,
+        activeFilter: action.payload,
       };
     default:
       return state;
   }
 };
 
-export const getAddLow = () => ({ type: ADD_LOW });
-export const getAddOptimal = () => ({ type: ADD_OPTIMAL });
-export const getAddFast = () => ({ type: ADD_FAST });
+export const changeSort = (value) => ({
+  type: CHANGE_SORT,
+  payload: value,
+});
