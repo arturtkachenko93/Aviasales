@@ -1,1 +1,1 @@
-https://movieapp-jm971sxra-bvrus93-gmailcom.vercel.app/
+https://aviasales-delta-lovat.vercel.app/
