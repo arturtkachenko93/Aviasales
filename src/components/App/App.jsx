@@ -4,7 +4,7 @@ import { css } from "@emotion/react";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { getSearchId, getTickets } from "../../api/api";
 import { getNextTickets } from "../../store/ticketsReducer";
-import { Form } from "../Form";
+import { Filter } from "../Filter";
 import { Sort } from "../Sort";
 import { TicketList } from "../TicketList";
 
@@ -41,7 +41,7 @@ const App = () => {
         <img src={Logo} alt="logo" />
       </header>
       <main className={classes.main}>
-        <Form />
+        <Filter />
         <div className={classes.wrapper}>
           <Sort />
           <PacmanLoader color="turquoise" css={override} size={16} loading={!status.stop} />

@@ -2,9 +2,9 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Checkbox } from "antd";
 import { getChecked } from "../../store/filterReducer";
-import classes from "./Form.module.scss";
+import classes from "./Filter.module.scss";
 
-const Form = () => {
+const Filter = () => {
   const dispatch = useDispatch();
   const checkboxesData = useSelector((state) => state.filters.filters);
 
@@ -30,4 +30,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default Filter;
