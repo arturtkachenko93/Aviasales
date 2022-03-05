@@ -1,1 +1,1 @@
-https://aviasales-delta-lovat.vercel.app/
+https://aviasales-arturtkachenko93.vercel.app/
