@@ -16,9 +16,6 @@ const App = () => {
   const searchId = useSelector((state) => state.tickets.id);
   const status = useSelector((state) => state.tickets.tickets);
 
-
-
-
   useEffect(() => {
     dispatch(getSearchId());
   }, []);

@@ -1,6 +1,7 @@
 import React from "react";
 import { departureFormat, arrivalFormat, getTimeFromMins } from "../../utils/formatDate";
 import { priceFormat } from "../../utils/priceFormat";
+import { emptyTransfer } from "../../utils/emptyTransfer";
 import classes from "./Ticket.module.scss";
 
 const Ticket = ({
@@ -15,6 +16,7 @@ const Ticket = ({
   backDestination,
   backData,
   backDuration,
+  backStops,
 }) => {
   return (
     <li className={classes.item}>
@@ -35,7 +37,7 @@ const Ticket = ({
         </div>
         <div className={classes.row}>
           <span className={classes.title}>2 пересадки</span>
-          <span className={classes.subtitle}>{thereStops.join(", ")}</span>
+          <span className={classes.subtitle}>{emptyTransfer(thereStops)}</span>
         </div>
         <div className={classes.row}>
           <span className={classes.title}>{`${backOrigin} - ${backDestination}`}</span>
@@ -49,7 +51,7 @@ const Ticket = ({
         </div>
         <div className={classes.row}>
           <span className={classes.title}>1 пересадка</span>
-          <span className={classes.subtitle}>hkg</span>
+          <span className={classes.subtitle}>{emptyTransfer(backStops)}</span>
         </div>
       </div>
     </li>

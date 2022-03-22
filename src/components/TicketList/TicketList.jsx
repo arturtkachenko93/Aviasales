@@ -12,11 +12,10 @@ const TicketList = () => {
   const sort = useSelector((state) => state.sort);
   const filters = useSelector((state) => state.filters);
 
-  getSlice(tickets.tickets.data, tickets.page);
-  const ticketItems = sortTickets(
-    filterTickets(getSlice(tickets.tickets.data, tickets.page), filters.filters),
+  const ticketItems = getSlice(sortTickets(
+    filterTickets(tickets.tickets.data, filters.filters),
     sort.activeFilter
-  ).map((item) => {
+  ), tickets.page).map((item) => {
     return (
       <Ticket
         key={uuid()}
